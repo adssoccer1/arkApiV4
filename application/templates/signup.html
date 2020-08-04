@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block body %}
+
+	<main>
+		<!-- Search form -->
+		<form id="searchForm" action="/signup" method="GET">
+	        <input id="searchInput" autocomplete="off" autofocus name="email" placeholder="Email" type="email" maxlength="30">
+	        <input type="submit" value="Search">
+		</form>
+	</main>
+
+	{% if usernameTaken %}
+
+		<p> {{username}} is already in use :/ </p>
+		<p> Please enter a different email </p>
+	{% endif %}
+
+	{%for user in listOfAllUsers %}
+
+		{{user}}
+	{% endfor %}
+
+	
+{% endblock %}

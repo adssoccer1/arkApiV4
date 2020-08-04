@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block body %}
+
+	
+
+	<main>
+
+		<div">
+			<p> 
+			This is a RESTFUL API that returns JSON responses containing the latest stock <br>
+			holdings of <a  target="_blank" href="https://ark-invest.com/"> Ark Invest's </a> publicly traded ETFs. This information is <br>
+			sourced from their website: <a target="_blank" href="https://ark-funds.com/investor-resources">here</a>
+			</p>
+			<hr>
+
+		</div>
+
+		<p style="font-size: larger;"> Enter a valid email address to gain FREE access to an API key. </p>
+
+		<!-- Search form -->
+		<form id="searchForm" action="/" method="GET">
+	        <input id="searchInput" autocomplete="off" autofocus name="email" placeholder="Email" type="email" maxlength="30">
+	        <div style="padding: 10px;">
+	        	<input type="submit" value="Get API Access Key">
+	        </div>
+		</form>
+
+		<p style="font-size: small;">Example json response to API: 	https://arkapi.herokuapp.com/ARKK/<strong>yourKeyHere</strong> </p>
+		<img src="{{url_for('static', filename='jsonpic.png')}}" align="middle" />
+
+
+	</main>
+
+
+
+
+	{%for user in listOfAllUsers %}
+		{{user}}
+	{% endfor %}
+
+	
+{% endblock %}

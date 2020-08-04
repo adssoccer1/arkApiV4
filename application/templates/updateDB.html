@@ -1,0 +1,44 @@
+{% extends "layout.html" %} 
+{% block body %}
+
+<h1> Arkk </h1>
+
+{% for stock in ArkkQuery %}
+	<p>{{stock.ticker}} and {{stock.shares}} </p>
+{% endfor %}
+
+<h1> Arkq </h1>
+
+{% for stock in ArkqQuery %}
+	<p>{{stock.ticker}} and {{stock.shares}} </p>
+{% endfor %}
+
+<h1> Arkg </h1>
+
+{% for stock in ArkgQuery %}
+	<p>{{stock.ticker}} and {{stock.shares}} </p>
+{% endfor %}
+
+<h1> Arkf </h1>
+
+{% for stock in ArkfQuery %}
+	<p>{{stock.ticker}} and {{stock.shares}} </p>
+{% endfor %}
+
+<h1> Arkw </h1>
+
+{% for stock in ArkwQuery %}
+	<p>{{stock.ticker}} and {{stock.shares}} </p>
+{% endfor %}
+
+<h1> PRINT </h1>
+{% for stock in PrintQuery %}
+	<p>{{stock.ticker}} and {{stock.shares}} </p>
+{% endfor %}
+
+<h1> IZRL </h1>
+{% for stock in IzrlQuery %}
+	<p>{{stock.ticker}} and {{stock.shares}} </p>
+{% endfor %}
+
+{% endblock %} 
