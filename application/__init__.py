@@ -9,9 +9,9 @@ def create_app():
     app = Flask(__name__, instance_relative_config=False)
     app.config.from_object('config.Config')
     #Using a production configuration
-    #app.config.from_object('config.ProdConfig')
+    app.config.from_object('config.ProdConfig')
     # Using a development configuration
-    app.config.from_object('config.DevConfig')
+    #app.config.from_object('config.DevConfig')
     db.init_app(app)
     #data.init_app(app)
 
