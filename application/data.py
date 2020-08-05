@@ -5,7 +5,7 @@ import io
 import json
 from datetime import datetime as dt
 import math
-from .models import *
+import models
 from requests import ReadTimeout, ConnectTimeout, HTTPError, Timeout, ConnectionError
 import time
 
@@ -531,4 +531,5 @@ def getIZRLData():
     
     """
 if __name__ == '__main__':
+    print("here")
     updateData()
