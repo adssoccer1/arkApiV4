@@ -5,7 +5,7 @@ import io
 import json
 from datetime import datetime as dt
 import math
-import models
+from .models import *
 from requests import ReadTimeout, ConnectTimeout, HTTPError, Timeout, ConnectionError
 import time
 
