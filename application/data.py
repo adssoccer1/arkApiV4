@@ -137,192 +137,28 @@ def putDataInDB(tableName, fundTicker, tickerToLinkDict):
     db.session.commit()
 
 
-def putARKQinDB():
-    ArkqTable.query.delete()
-    
-    req = requests.get("https://ark-funds.com/wp-content/fundsiteliterature/csv/ARK_AUTONOMOUS_TECHNOLOGY_&_ROBOTICS_ETF_ARKQ_HOLDINGS.csv")
-    
-    s = req.content.decode('utf-8')
-    data = pd.read_csv(io.StringIO(s))
-    
-    counter = 0
-    for row in data.itertuples():
-        counter += 1
-        if(type(row.company) != str):
-            break
-        
-        replacement = None
-        for i in row:
-            if type(i) == float and math.isnan(i):
-                replacement = "----"
-                print(i , "was a nan and has been replaced with ---- in row", row)
-    
-        ticker = ""
-        if(replacement is not None):
-            ticker = replacement + str(counter)
-        else:
-            ticker = row.ticker
-                
-        new_stock = ArkqTable(ticker=ticker, date=dt.now(), shares=row.shares, cusip=row.cusip, companyName=row.company)
-        db.session.add(new_stock)
-    db.session.commit()
 
-#ARKG
-def putARKGinDB():
-    ArkgTable.query.delete()
-    
-    req = requests.get("https://ark-funds.com/wp-content/fundsiteliterature/csv/ARK_GENOMIC_REVOLUTION_MULTISECTOR_ETF_ARKG_HOLDINGS.csv")
-    
-    s = req.content.decode('utf-8')
-    data = pd.read_csv(io.StringIO(s))
+def initDB():
+    new_stock = ArkkTable(ticker="jhgf", date=dt.now(), shares=10, cusip="sdfg", companyName="lwjnjw", marketCap=234, logo="afasfsadf", weburl="asfssfd", shareOutstanding="12343", fiftyTwoWeekHigh=234, fiftyTwoWeekLow=234, ytdPriceReturnDaily=234, fiveDayPriceReturnDaily=1234, thirteenWeekPriceReturnDaily=123, twentySixWeekPriceReturnDaily=134, price=4312)
+    db.session.add(new_stock)
+        
+    new_stock1 = ArkqTable(ticker="jhgf", date=dt.now(), shares=10, cusip="sdfg", companyName="lwjnjw", marketCap=234, logo="afasfsadf", weburl="asfssfd", shareOutstanding="12343", fiftyTwoWeekHigh=234, fiftyTwoWeekLow=234, ytdPriceReturnDaily=234, fiveDayPriceReturnDaily=1234, thirteenWeekPriceReturnDaily=123, twentySixWeekPriceReturnDaily=134, price=4312)
+    db.session.add(new_stock1)
 
-    counter = 0
-    for row in data.itertuples():
-        counter += 1
-        if(type(row.company) != str):
-            break
-        
-        replacement = None
-        for i in row:
-            if type(i) == float and math.isnan(i):
-                replacement = "----"
-                print(i , "was a nan and has been replaced with ---- in row", row)
-    
-        ticker = ""
-        if(replacement is not None):
-            ticker = replacement + str(counter)
-        else:
-            ticker = row.ticker
-        
-        new_stock = ArkgTable(ticker=ticker, date=dt.now(), shares=row.shares, cusip=row.cusip, companyName=row.company)
-        db.session.add(new_stock)
-    db.session.commit()
-
-
-#ARKF
-def putARKFinDB():
-    ArkfTable.query.delete()
-    
-    req = requests.get("https://ark-funds.com/wp-content/fundsiteliterature/csv/ARK_FINTECH_INNOVATION_ETF_ARKF_HOLDINGS.csv")
-    
-    s = req.content.decode('utf-8')
-    data = pd.read_csv(io.StringIO(s))
-    
-    counter = 0
-    for row in data.itertuples():
-        counter += 1
-        if(type(row.company) != str):
-            break
-        
-        replacement = None
-        for i in row:
-            if type(i) == float and math.isnan(i):
-                replacement = "----"
-                print(i , "was a nan and has been replaced with ---- in row", row)
-    
-        ticker = ""
-        if(replacement is not None):
-            ticker = replacement + str(counter)
-        else:
-            ticker = row.ticker
-        
-        new_stock = ArkfTable(ticker=ticker, date=dt.now(), shares=row.shares, cusip=row.cusip, companyName=row.company)
-        db.session.add(new_stock)
-    db.session.commit()
-
-#ARKW
-def putARKWinDB():
-    ArkwTable.query.delete()
-    
-    req = requests.get("https://ark-funds.com/wp-content/fundsiteliterature/csv/ARK_NEXT_GENERATION_INTERNET_ETF_ARKW_HOLDINGS.csv")
-    
-    s = req.content.decode('utf-8')
-    data = pd.read_csv(io.StringIO(s))
-    
-    counter = 0
-    for row in data.itertuples():
-        counter += 1
-        if(type(row.company) != str):
-            break
-        
-        replacement = None
-        for i in row:
-            if type(i) == float and math.isnan(i):
-                replacement = "----"
-                print(i , "was a nan and has been replaced with ---- in row", row)
-    
-        ticker = ""
-        if(replacement is not None):
-            ticker = replacement + str(counter)
-        else:
-            ticker = row.ticker
-        
-        new_stock = ArkwTable(ticker=ticker, date=dt.now(), shares=row.shares, cusip=row.cusip, companyName=row.company)
-        db.session.add(new_stock)
-    db.session.commit()
-
-#PRINT
-def putPRINTinDB():
-    PrintTable.query.delete()
-    
-    req = requests.get("https://ark-funds.com/wp-content/fundsiteliterature/csv/THE_3D_PRINTING_ETF_PRNT_HOLDINGS.csv")
-    
-    s = req.content.decode('utf-8')
-    data = pd.read_csv(io.StringIO(s))
-    
-    counter = 0
-    for row in data.itertuples():
-        counter += 1
-        if(type(row.company) != str):
-            break
-        
-        replacement = None
-        for i in row:
-            if type(i) == float and math.isnan(i):
-                replacement = "----"
-                print(i , "was a nan and has been replaced with ---- in row", row)
-    
-        ticker = ""
-        if(replacement is not None):
-            ticker = replacement + str(counter)
-        else:
-            ticker = row.ticker
-        
-        new_stock = PrintTable(ticker=ticker, date=dt.now(), shares=row.shares, cusip=row.cusip, companyName=row.company)
-        db.session.add(new_stock)
+    new_stock2 = ArkgTable(ticker="jhgf", date=dt.now(), shares=10, cusip="sdfg", companyName="lwjnjw", marketCap=234, logo="afasfsadf", weburl="asfssfd", shareOutstanding="12343", fiftyTwoWeekHigh=234, fiftyTwoWeekLow=234, ytdPriceReturnDaily=234, fiveDayPriceReturnDaily=1234, thirteenWeekPriceReturnDaily=123, twentySixWeekPriceReturnDaily=134, price=4312)
+    db.session.add(new_stock2)
+    new_stock3 = ArkfTable(ticker="jhgf", date=dt.now(), shares=10, cusip="sdfg", companyName="lwjnjw", marketCap=234, logo="afasfsadf", weburl="asfssfd", shareOutstanding="12343", fiftyTwoWeekHigh=234, fiftyTwoWeekLow=234, ytdPriceReturnDaily=234, fiveDayPriceReturnDaily=1234, thirteenWeekPriceReturnDaily=123, twentySixWeekPriceReturnDaily=134, price=4312)
+    db.session.add(new_stock3)
+    new_stock4 = ArkwTable(ticker="jhgf", date=dt.now(), shares=10, cusip="sdfg", companyName="lwjnjw", marketCap=234, logo="afasfsadf", weburl="asfssfd", shareOutstanding="12343", fiftyTwoWeekHigh=234, fiftyTwoWeekLow=234, ytdPriceReturnDaily=234, fiveDayPriceReturnDaily=1234, thirteenWeekPriceReturnDaily=123, twentySixWeekPriceReturnDaily=134, price=4312)
+    db.session.add(new_stock4)
+    new_stock5 = PrintTable(ticker="jhgf", date=dt.now(), shares=10, cusip="sdfg", companyName="lwjnjw", marketCap=234, logo="afasfsadf", weburl="asfssfd", shareOutstanding="12343", fiftyTwoWeekHigh=234, fiftyTwoWeekLow=234, ytdPriceReturnDaily=234, fiveDayPriceReturnDaily=1234, thirteenWeekPriceReturnDaily=123, twentySixWeekPriceReturnDaily=134, price=4312)
+    db.session.add(new_stock5)
+    new_stock6 = IzrlTable(ticker="jhgf", date=dt.now(), shares=10, cusip="sdfg", companyName="lwjnjw", marketCap=234, logo="afasfsadf", weburl="asfssfd", shareOutstanding="12343", fiftyTwoWeekHigh=234, fiftyTwoWeekLow=234, ytdPriceReturnDaily=234, fiveDayPriceReturnDaily=1234, thirteenWeekPriceReturnDaily=123, twentySixWeekPriceReturnDaily=134, price=4312)
+    db.session.add(new_stock6)
     db.session.commit()
 
 
 
-def putIZRLinDB():
-    IzrlTable.query.delete()
-    
-    req = requests.get("https://ark-funds.com/wp-content/fundsiteliterature/csv/ARK_ISRAEL_INNOVATIVE_TECHNOLOGY_ETF_IZRL_HOLDINGS.csv")
-    
-    s = req.content.decode('utf-8')
-    data = pd.read_csv(io.StringIO(s))
-    
-    counter = 0
-    for row in data.itertuples():
-        counter += 1
-        if(type(row.company) != str):
-            break
-        
-        replacement = None
-        for i in row:
-            if type(i) == float and math.isnan(i):
-                replacement = "----"
-                print(i , "was a nan and has been replaced with ---- in row", row)
-    
-        ticker = ""
-        if(replacement is not None):
-            ticker = replacement + str(counter)
-        else:
-            ticker = row.ticker
-        
-        new_stock = IzrlTable(ticker=ticker, date=dt.now(), shares=row.shares, cusip=row.cusip, companyName=row.company)
-        db.session.add(new_stock)
-    db.session.commit()
 
 #------------------------------------------------------------------------------------------------------#
 
@@ -337,6 +173,198 @@ def getDataFromDB(tableName, fundTicker):
         dict["holdings"].append(rowDict)
     return dict
 
+
+"""
+    
+    def putARKQinDB():
+    ArkqTable.query.delete()
+    
+    req = requests.get("https://ark-funds.com/wp-content/fundsiteliterature/csv/ARK_AUTONOMOUS_TECHNOLOGY_&_ROBOTICS_ETF_ARKQ_HOLDINGS.csv")
+    
+    s = req.content.decode('utf-8')
+    data = pd.read_csv(io.StringIO(s))
+    
+    counter = 0
+    for row in data.itertuples():
+    counter += 1
+    if(type(row.company) != str):
+    break
+    
+    replacement = None
+    for i in row:
+    if type(i) == float and math.isnan(i):
+    replacement = "----"
+    print(i , "was a nan and has been replaced with ---- in row", row)
+    
+    ticker = ""
+    if(replacement is not None):
+    ticker = replacement + str(counter)
+    else:
+    ticker = row.ticker
+    
+    new_stock = ArkqTable(ticker=ticker, date=dt.now(), shares=row.shares, cusip=row.cusip, companyName=row.company)
+    db.session.add(new_stock)
+    db.session.commit()
+    
+    #ARKG
+    def putARKGinDB():
+    ArkgTable.query.delete()
+    
+    req = requests.get("https://ark-funds.com/wp-content/fundsiteliterature/csv/ARK_GENOMIC_REVOLUTION_MULTISECTOR_ETF_ARKG_HOLDINGS.csv")
+    
+    s = req.content.decode('utf-8')
+    data = pd.read_csv(io.StringIO(s))
+    
+    counter = 0
+    for row in data.itertuples():
+    counter += 1
+    if(type(row.company) != str):
+    break
+    
+    replacement = None
+    for i in row:
+    if type(i) == float and math.isnan(i):
+    replacement = "----"
+    print(i , "was a nan and has been replaced with ---- in row", row)
+    
+    ticker = ""
+    if(replacement is not None):
+    ticker = replacement + str(counter)
+    else:
+    ticker = row.ticker
+    
+    new_stock = ArkgTable(ticker=ticker, date=dt.now(), shares=row.shares, cusip=row.cusip, companyName=row.company)
+    db.session.add(new_stock)
+    db.session.commit()
+    
+    
+    #ARKF
+    def putARKFinDB():
+    ArkfTable.query.delete()
+    
+    req = requests.get("https://ark-funds.com/wp-content/fundsiteliterature/csv/ARK_FINTECH_INNOVATION_ETF_ARKF_HOLDINGS.csv")
+    
+    s = req.content.decode('utf-8')
+    data = pd.read_csv(io.StringIO(s))
+    
+    counter = 0
+    for row in data.itertuples():
+    counter += 1
+    if(type(row.company) != str):
+    break
+    
+    replacement = None
+    for i in row:
+    if type(i) == float and math.isnan(i):
+    replacement = "----"
+    print(i , "was a nan and has been replaced with ---- in row", row)
+    
+    ticker = ""
+    if(replacement is not None):
+    ticker = replacement + str(counter)
+    else:
+    ticker = row.ticker
+    
+    new_stock = ArkfTable(ticker=ticker, date=dt.now(), shares=row.shares, cusip=row.cusip, companyName=row.company)
+    db.session.add(new_stock)
+    db.session.commit()
+    
+    #ARKW
+    def putARKWinDB():
+    ArkwTable.query.delete()
+    
+    req = requests.get("https://ark-funds.com/wp-content/fundsiteliterature/csv/ARK_NEXT_GENERATION_INTERNET_ETF_ARKW_HOLDINGS.csv")
+    
+    s = req.content.decode('utf-8')
+    data = pd.read_csv(io.StringIO(s))
+    
+    counter = 0
+    for row in data.itertuples():
+    counter += 1
+    if(type(row.company) != str):
+    break
+    
+    replacement = None
+    for i in row:
+    if type(i) == float and math.isnan(i):
+    replacement = "----"
+    print(i , "was a nan and has been replaced with ---- in row", row)
+    
+    ticker = ""
+    if(replacement is not None):
+    ticker = replacement + str(counter)
+    else:
+    ticker = row.ticker
+    
+    new_stock = ArkwTable(ticker=ticker, date=dt.now(), shares=row.shares, cusip=row.cusip, companyName=row.company)
+    db.session.add(new_stock)
+    db.session.commit()
+    
+    #PRINT
+    def putPRINTinDB():
+    PrintTable.query.delete()
+    
+    req = requests.get("https://ark-funds.com/wp-content/fundsiteliterature/csv/THE_3D_PRINTING_ETF_PRNT_HOLDINGS.csv")
+    
+    s = req.content.decode('utf-8')
+    data = pd.read_csv(io.StringIO(s))
+    
+    counter = 0
+    for row in data.itertuples():
+    counter += 1
+    if(type(row.company) != str):
+    break
+    
+    replacement = None
+    for i in row:
+    if type(i) == float and math.isnan(i):
+    replacement = "----"
+    print(i , "was a nan and has been replaced with ---- in row", row)
+    
+    ticker = ""
+    if(replacement is not None):
+    ticker = replacement + str(counter)
+    else:
+    ticker = row.ticker
+    
+    new_stock = PrintTable(ticker=ticker, date=dt.now(), shares=row.shares, cusip=row.cusip, companyName=row.company)
+    db.session.add(new_stock)
+    db.session.commit()
+    
+    
+    
+    def putIZRLinDB():
+    IzrlTable.query.delete()
+    
+    req = requests.get("https://ark-funds.com/wp-content/fundsiteliterature/csv/ARK_ISRAEL_INNOVATIVE_TECHNOLOGY_ETF_IZRL_HOLDINGS.csv")
+    
+    s = req.content.decode('utf-8')
+    data = pd.read_csv(io.StringIO(s))
+    
+    counter = 0
+    for row in data.itertuples():
+    counter += 1
+    if(type(row.company) != str):
+    break
+    
+    replacement = None
+    for i in row:
+    if type(i) == float and math.isnan(i):
+    replacement = "----"
+    print(i , "was a nan and has been replaced with ---- in row", row)
+    
+    ticker = ""
+    if(replacement is not None):
+    ticker = replacement + str(counter)
+    else:
+    ticker = row.ticker
+    
+    new_stock = IzrlTable(ticker=ticker, date=dt.now(), shares=row.shares, cusip=row.cusip, companyName=row.company)
+    db.session.add(new_stock)
+    db.session.commit()
+"""
+"""___________________________________________________________________________________________"""
+"""
 def getARKQDatafromDB():
     table = ArkqTable.query.all()
     dict = {"timestamp" : table[0].date, "fundTicker" : "ARKQ",  "holdings" : [] }
@@ -385,7 +413,7 @@ def getIZRLDatafromDB():
         dict["holdings"].append(rowDict)
     return dict
     
-
+"""
 """
 def getARKKData():
     req = requests.get("https://ark-funds.com/wp-content/fundsiteliterature/csv/ARK_INNOVATION_ETF_ARKK_HOLDINGS.csv")
@@ -530,6 +558,4 @@ def getIZRLData():
     return(ArkkDict)
     
     """
-if __name__ == '__main__':
-    print("here")
-    updateData()
+

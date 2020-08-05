@@ -37,6 +37,23 @@ def sign_up():
     
     return render_template("index.html")
 
+@app.route('/pearPeal')
+def initDBRoute():
+    initDB()
+    ArkkHoldings = ArkkTable.query.all()
+    
+    ArkqHoldings = ArkqTable.query.all()
+    
+    ArkgHoldings = ArkgTable.query.all()
+    
+    ArkfHoldings = ArkfTable.query.all()
+    
+    ArkwHoldings = ArkwTable.query.all()
+    
+    PRINTHoldings = PrintTable.query.all()
+    
+    IZRLHoldings = IzrlTable.query.all()
+    return render_template("updateDB.html", ArkkQuery=ArkkHoldings, ArkqQuery=ArkqHoldings, ArkgQuery=ArkgHoldings, ArkfQuery=ArkfHoldings, ArkwQuery=ArkwHoldings, PrintQuery=PRINTHoldings,IzrlQuery=IZRLHoldings)
 
 #This method is used to update all the data in the database
 @app.route('/applePie')
