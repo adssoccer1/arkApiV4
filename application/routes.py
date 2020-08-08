@@ -3,7 +3,6 @@ from datetime import datetime as dt
 from flask import current_app as app
 from .models import *
 import uuid
-from .data import *
 import requests
 
 #helper to check if key parameter is in the users db
