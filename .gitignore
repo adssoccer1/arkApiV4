@@ -3,3 +3,4 @@ venv
 __pycache__
 connectToDb.py
 test.db
+updateDatav2.py

@@ -19,8 +19,6 @@ def sign_up():
     email = request.args.get('email')
     if email:
         #check username is in db.
-        print("HERE FIRST BITCH")
-
         if(User.query.filter_by(username=email).first() != None):
             apiAccessKey = User.query.filter_by(username=email).first().accessKey
             return render_template("userAccessKey.html", username=email, apiAccessKey=apiAccessKey)
@@ -56,6 +54,7 @@ def initDBRoute():
     return render_template("updateDB.html", ArkkQuery=ArkkHoldings, ArkqQuery=ArkqHoldings, ArkgQuery=ArkgHoldings, ArkfQuery=ArkfHoldings, ArkwQuery=ArkwHoldings, PrintQuery=PRINTHoldings,IzrlQuery=IZRLHoldings)
 
 #This method is used to update all the data in the database
+"""
 @app.route('/applePie')
 def routeUpdateData():
     
@@ -85,7 +84,7 @@ def routeUpdateData():
 
     #return render_template("updateDB.html", ArkkQuery=ArkkHoldings)
     return render_template("updateDB.html", ArkkQuery=ArkkHoldings, ArkqQuery=ArkqHoldings, ArkgQuery=ArkgHoldings, ArkfQuery=ArkfHoldings, ArkwQuery=ArkwHoldings, PrintQuery=PRINTHoldings,IzrlQuery=IZRLHoldings)
-
+"""
 
 
 @app.route('/ARKK/<key>')
