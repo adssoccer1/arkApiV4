@@ -1,4 +1,4 @@
-from application import create_app, db
+from application import create_app, db, data
 from flask_migrate import Migrate
 
 
@@ -12,3 +12,6 @@ if __name__ == "__main__":
 
     print("sweet")
     app.run()
+    print("update running")
+    data.updateData()
+    print("update ran")
