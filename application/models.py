@@ -20,6 +20,7 @@ class ArkkTable(db.Model):
     ticker = db.Column(db.String(64), index=False, unique=True, nullable=False)
     date = db.Column(db.DateTime,index=False,unique=False, nullable=False)
     shares = db.Column(db.Integer, unique=False, index=False)
+    weight = db.Column(db.Integer, unique=False, index=False)
     cusip = db.Column(db.String(36), unique=False)
     companyName = db.Column(db.String(64), unique=False)
     marketCap= db.Column(db.Integer, unique=False, index=False)
@@ -33,6 +34,7 @@ class ArkkTable(db.Model):
     thirteenWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     twentySixWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     price = db.Column(db.Integer, unique=False, index=False)
+    value = db.Column(db.Integer, unique=False, index=False)
 
     def __str__(self):
         return f"{self.id}: ticker: {self.ticker} date: {self.date} shares: {self.shares} cusip{self.cusip} companyName: {self.companyName} price: {self.price}"
@@ -57,6 +59,8 @@ class ArkqTable(db.Model):
     thirteenWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     twentySixWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     price = db.Column(db.Integer, unique=False, index=False)
+    weight = db.Column(db.Integer, unique=False, index=False)
+    value = db.Column(db.Integer, unique=False, index=False)
 
     def __str__(self):
         return f"{self.id}: ticker: {self.ticker} date: {self.date} shares: {self.shares} cusip{self.cusip} companyName: {self.companyName}"
@@ -81,6 +85,8 @@ class ArkgTable(db.Model):
     thirteenWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     twentySixWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     price = db.Column(db.Integer, unique=False, index=False)
+    weight = db.Column(db.Integer, unique=False, index=False)
+    value = db.Column(db.Integer, unique=False, index=False)
 
     def __str__(self):
         return f"{self.id}: ticker: {self.ticker} date: {self.date} shares: {self.shares} cusip{self.cusip} companyName: {self.companyName}"
@@ -105,6 +111,8 @@ class ArkfTable(db.Model):
     thirteenWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     twentySixWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     price = db.Column(db.Integer, unique=False, index=False)
+    weight = db.Column(db.Integer, unique=False, index=False)
+    value = db.Column(db.Integer, unique=False, index=False)
 
     def __str__(self):
         return f"{self.id}: ticker: {self.ticker} date: {self.date} shares: {self.shares} cusip{self.cusip} companyName: {self.companyName}"
@@ -129,7 +137,8 @@ class ArkwTable(db.Model):
     thirteenWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     twentySixWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     price = db.Column(db.Integer, unique=False, index=False)
-
+    weight = db.Column(db.Integer, unique=False, index=False)
+    value = db.Column(db.Integer, unique=False, index=False)
 
     def __str__(self):
         return f"{self.id}: ticker: {self.ticker} date: {self.date} shares: {self.shares} cusip{self.cusip} companyName: {self.companyName}"
@@ -153,7 +162,8 @@ class PrintTable(db.Model):
     thirteenWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     twentySixWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     price = db.Column(db.Integer, unique=False, index=False)
-
+    weight = db.Column(db.Integer, unique=False, index=False)
+    value = db.Column(db.Integer, unique=False, index=False)
 
     def __str__(self):
         return f"{self.id}: ticker: {self.ticker} date: {self.date} shares: {self.shares} cusip{self.cusip} companyName: {self.companyName}"
@@ -177,6 +187,8 @@ class IzrlTable(db.Model):
     thirteenWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     twentySixWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     price = db.Column(db.Integer, unique=False, index=False)
+    weight = db.Column(db.Integer, unique=False, index=False)
+    value = db.Column(db.Integer, unique=False, index=False)
 
 
     def __str__(self):

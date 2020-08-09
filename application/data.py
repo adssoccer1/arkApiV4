@@ -169,7 +169,7 @@ def getDataFromDB(tableName, fundTicker):
         return
     dict = {"timestamp" : table[0].date, "fundTicker" : fundTicker,  "holdings" : [] }
     for row in table:
-        rowDict = {"ticker" : row.ticker , "company": row.companyName, "cusip": row.cusip, "shares" : row.shares, "marketCap" : row.marketCap, "logo" : row.logo, "weburl" : row.weburl, "sharesOutstandig" : row.shareOutstanding, "fiftyTwoWeekHigh" : row.fiftyTwoWeekHigh, "fiftyTwoWeekLow" : row.fiftyTwoWeekLow, "ytdPriceReturnDaily" : row.ytdPriceReturnDaily, "fiveDayPriceReturnDaily" : row.fiveDayPriceReturnDaily, "thirteenWeekPriceReturnDaily" : row.thirteenWeekPriceReturnDaily, "twentySixWeekPriceReturnDaily" : row.twentySixWeekPriceReturnDaily, "price": row.price}
+        rowDict = {"ticker" : row.ticker , "weight": row.weight, "value" : row.value,  "company": row.companyName, "cusip": row.cusip, "shares" : row.shares, "marketCap" : row.marketCap, "logo" : row.logo, "weburl" : row.weburl, "sharesOutstandig" : row.shareOutstanding, "fiftyTwoWeekHigh" : row.fiftyTwoWeekHigh, "fiftyTwoWeekLow" : row.fiftyTwoWeekLow, "ytdPriceReturnDaily" : row.ytdPriceReturnDaily, "fiveDayPriceReturnDaily" : row.fiveDayPriceReturnDaily, "thirteenWeekPriceReturnDaily" : row.thirteenWeekPriceReturnDaily, "twentySixWeekPriceReturnDaily" : row.twentySixWeekPriceReturnDaily, "price": row.price}
         dict["holdings"].append(rowDict)
     return dict
 
