@@ -20,7 +20,7 @@ class ArkkTable(db.Model):
     ticker = db.Column(db.String(64), index=False, unique=True, nullable=False)
     date = db.Column(db.DateTime,index=False,unique=False, nullable=False)
     shares = db.Column(db.Integer, unique=False, index=False)
-    weight = db.Column(db.Integer, unique=False, index=False)
+    weight = db.Column(db.Float, unique=False, index=False)
     cusip = db.Column(db.String(36), unique=False)
     companyName = db.Column(db.String(64), unique=False)
     marketCap= db.Column(db.Integer, unique=False, index=False)
@@ -59,7 +59,7 @@ class ArkqTable(db.Model):
     thirteenWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     twentySixWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     price = db.Column(db.Integer, unique=False, index=False)
-    weight = db.Column(db.Integer, unique=False, index=False)
+    weight = db.Column(db.Float, unique=False, index=False)
     value = db.Column(db.Integer, unique=False, index=False)
 
     def __str__(self):
@@ -85,7 +85,7 @@ class ArkgTable(db.Model):
     thirteenWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     twentySixWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     price = db.Column(db.Integer, unique=False, index=False)
-    weight = db.Column(db.Integer, unique=False, index=False)
+    weight = db.Column(db.Float, unique=False, index=False)
     value = db.Column(db.Integer, unique=False, index=False)
 
     def __str__(self):
@@ -111,7 +111,7 @@ class ArkfTable(db.Model):
     thirteenWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     twentySixWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     price = db.Column(db.Integer, unique=False, index=False)
-    weight = db.Column(db.Integer, unique=False, index=False)
+    weight = db.Column(db.Float, unique=False, index=False)
     value = db.Column(db.Integer, unique=False, index=False)
 
     def __str__(self):
@@ -137,7 +137,7 @@ class ArkwTable(db.Model):
     thirteenWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     twentySixWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     price = db.Column(db.Integer, unique=False, index=False)
-    weight = db.Column(db.Integer, unique=False, index=False)
+    weight = db.Column(db.Float, unique=False, index=False)
     value = db.Column(db.Integer, unique=False, index=False)
 
     def __str__(self):
@@ -162,7 +162,7 @@ class PrintTable(db.Model):
     thirteenWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     twentySixWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     price = db.Column(db.Integer, unique=False, index=False)
-    weight = db.Column(db.Integer, unique=False, index=False)
+    weight = db.Column(db.Float, unique=False, index=False)
     value = db.Column(db.Integer, unique=False, index=False)
 
     def __str__(self):
@@ -187,7 +187,7 @@ class IzrlTable(db.Model):
     thirteenWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     twentySixWeekPriceReturnDaily = db.Column(db.Integer, unique=False, index=False)
     price = db.Column(db.Integer, unique=False, index=False)
-    weight = db.Column(db.Integer, unique=False, index=False)
+    weight = db.Column(db.Float, unique=False, index=False)
     value = db.Column(db.Integer, unique=False, index=False)
 
 
