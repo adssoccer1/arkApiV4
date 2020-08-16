@@ -37,7 +37,7 @@ def sign_up():
 
 @app.route('/pearPeal')
 def initDBRoute():
-    initDB()
+    initDBv2()
     ArkkHoldings = ArkkTable.query.all()
     
     ArkqHoldings = ArkqTable.query.all()
