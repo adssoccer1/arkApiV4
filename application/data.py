@@ -139,28 +139,28 @@ def putDataInDB(tableName, fundTicker, tickerToLinkDict):
 def initDBv2():
     
     
-    new_stock = ArkkTable(companyName="lwjnjw")
+    new_stock = ArkkTable(date=dt.now(), cusip="asdf", companyName="lwjnjw", ticker="lwjnjw", logo="asdF", weburl="asdfa", value=1, shares=1, weight=1, price=1, marketCap=1, FullTimeEmployees=1, PERatio=1, EPS=1, DividendYield=1, QuarterlyEarningsGrowthYOY=1, QuarterlyRevenueGrowthYOY=1, fiftyTwoWeekHigh=1,fiftyTwoWeekLow=1, fiftyDayMovingAverage=1, twohundredDayMovingAverage=1, PercentInsiders=1, PercentInstitutions=1, avg10Volume=1, avg30Volume=1, year5ChangePercent=1, year2ChangePercent=1, year1ChangePercent=1, month6ChangePercent=1, month3ChangePercent=1, month1ChangePercent=1, day5ChangePercent=1, nextEarningsDate="asfd", shareOutstanding= 1)
     db.session.add(new_stock)
 
-    new_stock1 = ArkqTable(companyName="lwjnjw")
+    new_stock1 = ArkqTable(date=dt.now(), cusip="asdf", companyName="lwjnjw", ticker="lwjnjw", logo="asdF", weburl="asdfa", value=1, shares=1, weight=1, price=1, marketCap=1, FullTimeEmployees=1, PERatio=1, EPS=1, DividendYield=1, QuarterlyEarningsGrowthYOY=1, QuarterlyRevenueGrowthYOY=1, fiftyTwoWeekHigh=1,fiftyTwoWeekLow=1, fiftyDayMovingAverage=1, twohundredDayMovingAverage=1, PercentInsiders=1, PercentInstitutions=1, avg10Volume=1, avg30Volume=1, year5ChangePercent=1, year2ChangePercent=1, year1ChangePercent=1, month6ChangePercent=1, month3ChangePercent=1, month1ChangePercent=1, day5ChangePercent=1, nextEarningsDate="asfd", shareOutstanding= 1)
     db.session.add(new_stock1)
 
-    new_stock2 = ArkgTable(companyName="lwjnjw")
+    new_stock2 = ArkgTable(date=dt.now(), cusip="asdf", companyName="lwjnjw", ticker="lwjnjw", logo="asdF", weburl="asdfa", value=1, shares=1, weight=1, price=1, marketCap=1, FullTimeEmployees=1, PERatio=1, EPS=1, DividendYield=1, QuarterlyEarningsGrowthYOY=1, QuarterlyRevenueGrowthYOY=1, fiftyTwoWeekHigh=1,fiftyTwoWeekLow=1, fiftyDayMovingAverage=1, twohundredDayMovingAverage=1, PercentInsiders=1, PercentInstitutions=1, avg10Volume=1, avg30Volume=1, year5ChangePercent=1, year2ChangePercent=1, year1ChangePercent=1, month6ChangePercent=1, month3ChangePercent=1, month1ChangePercent=1, day5ChangePercent=1, nextEarningsDate="asfd", shareOutstanding= 1)
     db.session.add(new_stock2)
     
-    new_stock3 = ArkfTable(companyName="lwjnjw")
+    new_stock3 = ArkfTable(date=dt.now(), cusip="asdf", companyName="lwjnjw", ticker="lwjnjw", logo="asdF", weburl="asdfa", value=1, shares=1, weight=1, price=1, marketCap=1, FullTimeEmployees=1, PERatio=1, EPS=1, DividendYield=1, QuarterlyEarningsGrowthYOY=1, QuarterlyRevenueGrowthYOY=1, fiftyTwoWeekHigh=1,fiftyTwoWeekLow=1, fiftyDayMovingAverage=1, twohundredDayMovingAverage=1, PercentInsiders=1, PercentInstitutions=1, avg10Volume=1, avg30Volume=1, year5ChangePercent=1, year2ChangePercent=1, year1ChangePercent=1, month6ChangePercent=1, month3ChangePercent=1, month1ChangePercent=1, day5ChangePercent=1, nextEarningsDate="asfd", shareOutstanding= 1)
     db.session.add(new_stock3)
 
-    new_stock4 = ArkwTable(companyName="lwjnjw")
+    new_stock4 = ArkwTable(date=dt.now(), cusip="asdf", companyName="lwjnjw", ticker="lwjnjw", logo="asdF", weburl="asdfa", value=1, shares=1, weight=1, price=1, marketCap=1, FullTimeEmployees=1, PERatio=1, EPS=1, DividendYield=1, QuarterlyEarningsGrowthYOY=1, QuarterlyRevenueGrowthYOY=1, fiftyTwoWeekHigh=1,fiftyTwoWeekLow=1, fiftyDayMovingAverage=1, twohundredDayMovingAverage=1, PercentInsiders=1, PercentInstitutions=1, avg10Volume=1, avg30Volume=1, year5ChangePercent=1, year2ChangePercent=1, year1ChangePercent=1, month6ChangePercent=1, month3ChangePercent=1, month1ChangePercent=1, day5ChangePercent=1, nextEarningsDate="asfd", shareOutstanding= 1)
     db.session.add(new_stock4)
     
-    new_stock5 = PrintTable( companyName="lwjnjw")
+    new_stock5 = PrintTable(date=dt.now(), cusip="asdf", companyName="lwjnjw", ticker="lwjnjw", logo="asdF", weburl="asdfa", value=1, shares=1, weight=1, price=1, marketCap=1, FullTimeEmployees=1, PERatio=1, EPS=1, DividendYield=1, QuarterlyEarningsGrowthYOY=1, QuarterlyRevenueGrowthYOY=1, fiftyTwoWeekHigh=1,fiftyTwoWeekLow=1, fiftyDayMovingAverage=1, twohundredDayMovingAverage=1, PercentInsiders=1, PercentInstitutions=1, avg10Volume=1, avg30Volume=1, year5ChangePercent=1, year2ChangePercent=1, year1ChangePercent=1, month6ChangePercent=1, month3ChangePercent=1, month1ChangePercent=1, day5ChangePercent=1, nextEarningsDate="asfd", shareOutstanding= 1)
     db.session.add(new_stock5)
 
-    new_stock6 = IzrlTable(companyName="lwjnjw")
+    new_stock6 = IzrlTable(date=dt.now(), cusip="asdf", companyName="lwjnjw", ticker="lwjnjw", logo="asdF", weburl="asdfa", value=1, shares=1, weight=1, price=1, marketCap=1, FullTimeEmployees=1, PERatio=1, EPS=1, DividendYield=1, QuarterlyEarningsGrowthYOY=1, QuarterlyRevenueGrowthYOY=1, fiftyTwoWeekHigh=1,fiftyTwoWeekLow=1, fiftyDayMovingAverage=1, twohundredDayMovingAverage=1, PercentInsiders=1, PercentInstitutions=1, avg10Volume=1, avg30Volume=1, year5ChangePercent=1, year2ChangePercent=1, year1ChangePercent=1, month6ChangePercent=1, month3ChangePercent=1, month1ChangePercent=1, day5ChangePercent=1, nextEarningsDate="asfd", shareOutstanding= 1)
     db.session.add(new_stock6)
     
-    new_stock7 = AllStocks(date=dt.now(), cusip="asdf", companyName="lwjnjw", ticker="lwjnjw", logo="asdF", weburl="asdfa", value=1, shares=1, weight=1, price=1, marketCap=1, FullTimeEmployees=1, PERatio=1, EPS=1, DividendYield=1, QuarterlyEarningsGrowthYOY=1, QuarterlyRevenueGrowthYOY=1, fiftyTwoWeekHigh=1,fiftyTwoWeekLow=1, fiftyDayMovingAverage=1, twohundredDayMovingAverage=1, PercentInsiders=1, PercentInstitutions=1, avg10Volume=1, avg30Volume=1, year5ChangePercent=1, year2ChangePercent=1, year1ChangePercent=1, month6ChangePercent=1, month3ChangePercent=1, month1ChangePercent=1, day5ChangePercent=1, nextEarningsDate="asfd", shareOutstanding= 1)
+    new_stock7 = AllStocks(date=dt.now(), heldInFund="asfasf", cusip="asdf", companyName="lwjnjw", ticker="lwjnjw", logo="asdF", weburl="asdfa", value=1, shares=1, weight=1, price=1, marketCap=1, FullTimeEmployees=1, PERatio=1, EPS=1, DividendYield=1, QuarterlyEarningsGrowthYOY=1, QuarterlyRevenueGrowthYOY=1, fiftyTwoWeekHigh=1,fiftyTwoWeekLow=1, fiftyDayMovingAverage=1, twohundredDayMovingAverage=1, PercentInsiders=1, PercentInstitutions=1, avg10Volume=1, avg30Volume=1, year5ChangePercent=1, year2ChangePercent=1, year1ChangePercent=1, month6ChangePercent=1, month3ChangePercent=1, month1ChangePercent=1, day5ChangePercent=1, nextEarningsDate="asfd", shareOutstanding= 1)
     db.session.add(new_stock7)
     
     db.session.commit()
@@ -198,7 +198,8 @@ def getDataFromDB(tableName, fundTicker):
         return
     dict = {"timestamp" : dt.now(), "fundTicker" : fundTicker,  "holdings" : [] }
     for row in table:
-        info = AllStocks.query.filter_by(companyName=row.companyName).first()
+        #info = AllStocks.query.filter_by(companyName=row.companyName).first()
+        info = row
         rowDict = {"ticker" : info.ticker , "weight": info.weight, "value" : info.value,  "company": info.companyName, "cusip": info.cusip, "shares" : info.shares, "marketCap" : info.marketCap, "logo" : info.logo, "weburl" : info.weburl, "sharesOutstandig" : info.shareOutstanding,"price": info.price, "FullTimeEmployees":info.FullTimeEmployees, "PERatio":info.PERatio, "EPS":info.EPS, "DividendYield":info.DividendYield, "QuarterlyEarningsGrowthYOY":info.QuarterlyEarningsGrowthYOY, "QuarterlyRevenueGrowthYOY":info.QuarterlyRevenueGrowthYOY, "fiftyTwoWeekHigh":info.fiftyTwoWeekHigh, "fiftyTwoWeekLow":info.fiftyTwoWeekLow, "fiftyDayMovingAverage":info.fiftyDayMovingAverage, "twohundredDayMovingAverage":info.twohundredDayMovingAverage, "PercentInsiders":info.PercentInsiders,"PercentInstitutions":info.PercentInstitutions, "avg10Volume":info.avg10Volume, "avg30Volume":info.avg30Volume, "year5ChangePercent":info.year5ChangePercent, "year2ChangePercent":info.year2ChangePercent, "year1ChangePercent":info.year1ChangePercent, "month6ChangePercent":info.month6ChangePercent, "month3ChangePercent":info.month3ChangePercent, "month1ChangePercent":info.month1ChangePercent, "day5ChangePercent":info.day5ChangePercent, "nextEarningsDate":info.nextEarningsDate}
         dict["holdings"].append(rowDict)
     return dict
