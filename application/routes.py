@@ -86,6 +86,11 @@ def routeUpdateData():
     return render_template("updateDB.html", ArkkQuery=ArkkHoldings, ArkqQuery=ArkqHoldings, ArkgQuery=ArkgHoldings, ArkfQuery=ArkfHoldings, ArkwQuery=ArkwHoldings, PrintQuery=PRINTHoldings,IzrlQuery=IZRLHoldings)
 """
 
+@app.route('/All/<key>')
+def routeAll(key):
+    if(isKeyValid(key)):
+        return make_response(jsonify(getDatafromAllStocks(AllStocks, "All")), 200)
+    return make_response(jsonify({"invalid" : "key :/"}), 400)
 
 @app.route('/ARKK/<key>')
 def routeARKK(key):

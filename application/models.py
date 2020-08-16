@@ -23,7 +23,7 @@ class AllStocks(db.Model):
     date = db.Column(db.DateTime,index=False,unique=False, nullable=False)
     cusip = db.Column(db.String(36), unique=False)
     companyName = db.Column(db.String(64), unique=False)
-    ticker = db.Column(db.String(64), index=False, unique=True, nullable=False)
+    ticker = db.Column(db.String(64), index=False, unique=False, nullable=False)
     logo = db.Column(db.String(124), index=False, unique=False)
     weburl = db.Column(db.String(124), index=False)
 

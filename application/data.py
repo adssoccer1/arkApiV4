@@ -204,6 +204,20 @@ def getDataFromDB(tableName, fundTicker):
         dict["holdings"].append(rowDict)
     return dict
 
+def getDatafromAllStocks():
+    table = AllStocks.query.all()
+    if len(table) == 0:
+        print("table is empty")
+        return
+    dict = {"timestamp" : dt.now(), "fundTicker" : "not applicable",  "holdings" : [] }
+    for row in table:
+        #info = AllStocks.query.filter_by(companyName=row.companyName).first()
+        info = row
+            rowDict = {"ticker" : info.ticker , "weight": info.weight, "value" : info.value,  "company": info.companyName, "cusip": info.cusip, "shares" : info.shares, "heldinFunds" : info.heldinFunds, "marketCap" : info.marketCap, "logo" : info.logo, "weburl" : info.weburl, "sharesOutstandig" : info.shareOutstanding,"price": info.price, "FullTimeEmployees":info.FullTimeEmployees, "PERatio":info.PERatio, "EPS":info.EPS, "DividendYield":info.DividendYield, "QuarterlyEarningsGrowthYOY":info.QuarterlyEarningsGrowthYOY, "QuarterlyRevenueGrowthYOY":info.QuarterlyRevenueGrowthYOY, "fiftyTwoWeekHigh":info.fiftyTwoWeekHigh, "fiftyTwoWeekLow":info.fiftyTwoWeekLow, "fiftyDayMovingAverage":info.fiftyDayMovingAverage, "twohundredDayMovingAverage":info.twohundredDayMovingAverage, "PercentInsiders":info.PercentInsiders,"PercentInstitutions":info.PercentInstitutions, "avg10Volume":info.avg10Volume, "avg30Volume":info.avg30Volume, "year5ChangePercent":info.year5ChangePercent, "year2ChangePercent":info.year2ChangePercent, "year1ChangePercent":info.year1ChangePercent, "month6ChangePercent":info.month6ChangePercent, "month3ChangePercent":info.month3ChangePercent, "month1ChangePercent":info.month1ChangePercent, "day5ChangePercent":info.day5ChangePercent, "nextEarningsDate":info.nextEarningsDate}
+            dict["holdings"].append(rowDict)
+    return dict
+
+
 
 """
     
