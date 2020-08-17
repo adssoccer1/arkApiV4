@@ -35,7 +35,7 @@ def sign_up():
     
     return render_template("index.html")
 
-@app.route('/pearPeal')
+@app.route('/applePie')
 def initDBRoute():
     initDBv2()
     ArkkHoldings = ArkkTable.query.all()
