@@ -89,7 +89,7 @@ def routeUpdateData():
 @app.route('/All/<key>')
 def routeAll(key):
     if(isKeyValid(key)):
-        return make_response(jsonify(getDatafromAllStocks(AllStocks, "All")), 200)
+        return make_response(jsonify(getDatafromAllStocks()), 200)
     return make_response(jsonify({"invalid" : "key :/"}), 400)
 
 @app.route('/ARKK/<key>')
