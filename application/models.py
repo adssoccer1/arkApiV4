@@ -7,9 +7,11 @@ class User(db.Model):
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=False, unique=True, nullable=False)
-    accessKey = db.Column(db.String(36), unique=True, nullable=False)
+    accessKey = db.Column(db.String(36), unique=True)
     created = db.Column(db.DateTime,index=False,unique=False,nullable=False)
     admin = db.Column(db.Boolean,index=False,unique=False,nullable=False)
+    numberLogins = db.Column(db.Integer, unique=False, index=False)
+    client = db.Column(db.Integer, unique=False, index=False)
 
     def __str__(self):
         return f"{self.id}: username: {self.username} apikey: {self.accessKey} created: {self.created}"

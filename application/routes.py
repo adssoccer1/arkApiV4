@@ -35,6 +35,26 @@ def sign_up():
     
     return render_template("index.html")
 
+@app.route('/signUpReact', methods=['POST'])
+def signUpReact():
+    """Create a user via query string parameters."""
+    print("hi1")
+    if request.method == 'POST':
+        data = request.get_json() # a multidict containing POST data
+        print("hi")
+        print(data)
+        email = data['email']
+        print(email)
+        if(User.query.filter_by(username=email).first() != None):
+            client = User.query.filter_by(username=email).first()
+            print(client.numberLogins)
+            client.numberLogins += 1
+        else:
+            new_user = User(username=email, created=dt.now(),admin=False, numberLogins=1, client=1)
+            db.session.add(new_user)
+        db.session.commit()
+    return make_response(jsonify({"invalid" : "request :/"}), 200)
+
 @app.route('/applePie')
 def initDBRoute():
     initDBv2()

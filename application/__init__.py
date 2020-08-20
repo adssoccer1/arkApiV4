@@ -15,7 +15,8 @@ def create_app():
     db.init_app(app)
     #data.init_app(app)
 
-    CORS(app)
+    #CORS(app)
+    CORS(app, resources={r"/*": {"origins": "*"}})
 
     with app.app_context():
         from . import routes #import routes
