@@ -11,9 +11,8 @@ def create_app():
     #Using a production configuration
     app.config.from_object('config.ProdConfig')
     # Using a development configuration
-    #app.config.from_object('config.DevConfig')
+    #pp.config.from_object('config.DevConfig')
     db.init_app(app)
-    #data.init_app(app)
 
     #CORS(app)
     CORS(app, resources={r"/*": {"origins": "*"}})
