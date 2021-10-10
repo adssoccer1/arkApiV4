@@ -7,6 +7,7 @@ from datetime import datetime as dt
 import math
 from requests import ReadTimeout, ConnectTimeout, HTTPError, Timeout, ConnectionError
 import time
+from os import environ, path
 
 
 #db imports
@@ -21,7 +22,7 @@ def float_round(num, places = 0, direction = floor):
 
 def buildAllStocksTable():
     
-    engine = create_engine('postgresql://lnekapfrcanxeq:600325b36d0692c4bb68fd63c3e61abc993e262f9af884d04fb52a3bf76d8bef@ec2-107-22-33-173.compute-1.amazonaws.com:5432/dcmmcmfkksrq9q')
+    engine = create_engine(environ.get('DATABASE_URL'))
 
     print("attempting connection")
     Base = automap_base()
@@ -295,14 +296,12 @@ def updateData():
     AllStocks = {}
     
     print("creeating engine")
-    engine = create_engine('postgresql://lnekapfrcanxeq:600325b36d0692c4bb68fd63c3e61abc993e262f9af884d04fb52a3bf76d8bef@ec2-107-22-33-173.compute-1.amazonaws.com:5432/dcmmcmfkksrq9q')
+    engine = create_engine(environ.get('DATABASE_URL'))
     print("engine created")
 
     putDataInDB("ArkkTable", "ARKK", tickerToLinkDict, AllStocks, engine)
     print("Done with ArkkTable!")
     
-    """
-
     putDataInDB("ArkqTable", "ARKQ", tickerToLinkDict, AllStocks, engine)
     print("Done with ArkqTable!")
     
@@ -312,16 +311,15 @@ def updateData():
     
     putDataInDB("ArkfTable", "ARKF", tickerToLinkDict, AllStocks, engine)
     print("Done with ArkfTable!")
-    """
-    """
+
     putDataInDB("ArkwTable", "ARKW", tickerToLinkDict, AllStocks, engine)
     print("Done with ArkwTable!")
     
     putDataInDB("PrintTable", "PRINT", tickerToLinkDict, AllStocks, engine)
     print("Done with PrintTable!")
-    """
-    #putDataInDB("IzrlTable", "IZRL", tickerToLinkDict, AllStocks, engine)
-    #print("Done with IzrlTable!")
+
+    putDataInDB("IzrlTable", "IZRL", tickerToLinkDict, AllStocks, engine)
+    print("Done with IzrlTable!")
     
     print("Done with all the tables!")
     print("uploading stock information into db....")
@@ -335,4 +333,4 @@ def updateData():
 
 
 updateData()
-#buildAllStocksTable()
+buildAllStocksTable()
