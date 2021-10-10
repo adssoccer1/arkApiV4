@@ -8,6 +8,7 @@ import requests
 
 #helper to check if key parameter is in the users db
 def isKeyValid(key):
+    print("checking key")
     return (User.query.filter_by(accessKey=key).first() != None)
 
 
